@@ -36,6 +36,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('education.index') }}">{{ __('Education list') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('employment_history.create') }}">{{ __('Employment History') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('employment_history.index') }}">{{ __('EMployments list') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

@@ -7,11 +7,11 @@
        <div class="card">
         <div class="card-header">
             <h1>
-                {{__("Education create")}}
+                {{__("Language create")}}
             </h1>
         </div>
         <div class="card-body">
-           <form action="{{route('education.store')}}" method="POST">
+           <form action="{{route('language.store')}}" method="POST">
             @csrf
             <ul class="nav nav-tabs " role="tablist">
                 @foreach( config('translatable.locales') as  $localItem)
@@ -42,16 +42,6 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
-            </div>
-            <div class="mb-3">
-                            <label for="timeFrom" class="form-label">{{__("Time from")}}</label>
-                            <input type="date" class="form-control" id="timeFrom" name="timeFrom" placeholder="2015">
-                        </div>
-            <div class="mb-3">
-                <label for="timeTill" class="form-label">{{__("Time till")}}</label>
-                <input type="date" class="form-control" id="timeTill" name="timeTill" placeholder="2015">
-            </div>
             
             <div class="mb-3">
                 <button type="submit" class="btn btn-success">Success</button>

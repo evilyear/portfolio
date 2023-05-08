@@ -7,11 +7,11 @@
        <div class="card">
         <div class="card-header">
             <h1>
-                {{__("Education create")}}
+                {{__("Language update")}}
             </h1>
         </div>
         <div class="card-body">
-           <form action="{{route('education.store')}}" method="POST">
+           <form action="{{route('language.update',[$language])}}" method="POST">
             @csrf
             <ul class="nav nav-tabs " role="tablist">
                 @foreach( config('translatable.locales') as  $localItem)
@@ -34,27 +34,19 @@
                     <div class="tab-pane fade @if($localItem == config('translatable.fallback_locale')) active show @endif" id="{{$localItem}}" role="tabpanel">
                     <div class="mb-3">
                             <label for="title-{{ $localItem }}" class="form-label">{{__("Title")}}</label>
-                            <input type="text" class="form-control" id="title-{{ $localItem }}" name="{{ $localItem }}[title]" placeholder="Title">
+                            <input type="text" class="form-control" id="title-{{ $localItem }}" name="{{ $localItem }}[title]" placeholder="Title" 
+                            value="{{$language->translate($localItem)->title}}">
                         </div>
                         <div class="mb-3">
                             <label for="text-{{ $localItem }}" class="form-label">{{__("Text")}}</label>
-                            <textarea class="form-control" id="text-{{ $localItem }}" name="{{ $localItem }}[text]" rows="3"></textarea>
+                            <textarea class="form-control" id="text-{{ $localItem }}" name="{{ $localItem }}[text]" rows="3">{{$language->translate($localItem)->text}}</textarea>
                         </div>
                     </div>
                 @endforeach
             </div>
-            </div>
-            <div class="mb-3">
-                            <label for="timeFrom" class="form-label">{{__("Time from")}}</label>
-                            <input type="date" class="form-control" id="timeFrom" name="timeFrom" placeholder="2015">
-                        </div>
-            <div class="mb-3">
-                <label for="timeTill" class="form-label">{{__("Time till")}}</label>
-                <input type="date" class="form-control" id="timeTill" name="timeTill" placeholder="2015">
-            </div>
             
             <div class="mb-3">
-                <button type="submit" class="btn btn-success">Success</button>
+                <button type="submit" class="btn btn-success">Update</button>
             </div>
             </form>
         </div>

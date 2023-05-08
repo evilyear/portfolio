@@ -40,7 +40,7 @@
                             <a class="nav-link" href="{{ route('employment_history.create') }}">{{ __('Employment History') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('employment_history.index') }}">{{ __('EMployments list') }}</a>
+                            <a class="nav-link" href="{{ route('employment_history.index') }}">{{ __('Employments list') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('skill.create') }}">{{ __('Skills') }}</a>
@@ -53,6 +53,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('skill_element.index') }}">{{ __('Skill elements list') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('language.create') }}">{{ __('Language') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('language.index') }}">{{ __('Language list') }}</a>
                         </li>
                     </ul>
 

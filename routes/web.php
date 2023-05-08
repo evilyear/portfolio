@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\EmploymentHistoryController;
 use App\Http\Controllers\SkillController;
+use App\Http\Controllers\SkillElementController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,6 +57,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/skill/delete/{skill}',[SKillController::class, 'destroy'])->name('skill.destroy');
     Route::get('/skill/{skill}', [SKillController::class, 'edit'])->name('skill.edit');
     Route::post('/skill/edit/{skill}', [SKillController::class, 'update'])->name('skill.update');
+
+    Route::get('/skill_element', [SkillElementController::class, 'create'])->name('skill_element.create');
+    Route::post('/skill_element', [SkillElementController::class, 'store'])->name('skill_element.store');
+
+    Route::get('/skill_element-list', [SkillElementController::class, 'index'])->name('skill_element.index');
+
+    Route::get('/skill_element/delete/{skill_element}',[SkillElementController::class, 'destroy'])->name('skill_element.destroy');
+    Route::get('/skill_element/{skill_element}', [SkillElementController::class, 'edit'])->name('skill_element.edit');
+    Route::post('/skill_element/edit/{skill_element}', [SkillElementController::class, 'update'])->name('skill_element.update');
+
+    
 });
 
 require __DIR__.'/auth.php';

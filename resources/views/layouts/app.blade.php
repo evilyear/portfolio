@@ -48,6 +48,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('skill.index') }}">{{ __('Skills list') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('skill_element.create') }}">{{ __('Skill element') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('skill_element.index') }}">{{ __('Skill elements list') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

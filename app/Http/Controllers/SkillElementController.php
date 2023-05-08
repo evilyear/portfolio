@@ -38,6 +38,8 @@ class SkillElementController extends Controller
         $skill_element = new SkillElement;
         $skill_element->fill($data);
         $skill_element->save();
+
+        return Redirect(route("skill_element.create"));
     }
 
     /**

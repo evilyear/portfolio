@@ -66,6 +66,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('main_data.index') }}">{{ __('Main data list') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('reference.create') }}">{{ __('References') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('reference.index') }}">{{ __('References list') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

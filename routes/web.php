@@ -7,6 +7,7 @@ use App\Http\Controllers\SkillController;
 use App\Http\Controllers\SkillElementController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\MainDataController;
+use App\Http\Controllers\ReferenceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/education', [EducationController::class, 'create'])->name('education.create');
+    //Route::get('/education', 'EducationController@create')->name('education.create');
     Route::post('/education', [EducationController::class, 'store'])->name('education.store');
 
     Route::get('/education-list', [EducationController::class, 'index'])->name('education.index');
@@ -86,6 +88,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/main_data/delete/{main_data}',[MainDataController::class, 'destroy'])->name('main_data.destroy');
     Route::get('/main_data/{main_data}', [MainDataController::class, 'edit'])->name('main_data.edit');
     Route::post('/main_data/edit/{main_data}', [MainDataController::class, 'update'])->name('main_data.update');
+
+    Route::get('/reference', [ReferenceController::class, 'create'])->name('reference.create');
+    Route::post('/reference', [ReferenceController::class, 'store'])->name('reference.store');
+
+    Route::get('/reference-list', [ReferenceController::class, 'index'])->name('reference.index');
+
+    Route::get('/reference/delete/{reference}',[ReferenceController::class, 'destroy'])->name('reference.destroy');
+    Route::get('/reference/{reference}', [ReferenceController::class, 'edit'])->name('reference.edit');
+    Route::post('/reference/edit/{reference}', [ReferenceController::class, 'update'])->name('reference.update');
 
     
 });

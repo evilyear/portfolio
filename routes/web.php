@@ -6,6 +6,7 @@ use App\Http\Controllers\EmploymentHistoryController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\SkillElementController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\MainDataController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -76,6 +77,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/language/delete/{language}',[languageController::class, 'destroy'])->name('language.destroy');
     Route::get('/language/{language}', [languageController::class, 'edit'])->name('language.edit');
     Route::post('/language/edit/{language}', [languageController::class, 'update'])->name('language.update');
+
+    Route::get('/main_data', [MainDataController::class, 'create'])->name('main_data.create');
+    Route::post('/main_data', [MainDataController::class, 'store'])->name('main_data.store');
+
+    Route::get('/main_data-list', [MainDataController::class, 'index'])->name('main_data.index');
+
+    Route::get('/main_data/delete/{main_data}',[MainDataController::class, 'destroy'])->name('main_data.destroy');
+    Route::get('/main_data/{main_data}', [MainDataController::class, 'edit'])->name('main_data.edit');
+    Route::post('/main_data/edit/{main_data}', [MainDataController::class, 'update'])->name('main_data.update');
 
     
 });

@@ -60,6 +60,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('language.index') }}">{{ __('Language list') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('main_data.create') }}">{{ __('Main Data') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('main_data.index') }}">{{ __('Main data list') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

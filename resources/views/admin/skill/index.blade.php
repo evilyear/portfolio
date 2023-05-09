@@ -4,6 +4,10 @@
 
 <section>
     <div class="container">
+    <div class="mb-3 text-end">
+    <a class="btn btn-primary" href="{{ route('skill.create') }}" role="button">{{ __('Skills create') }}</a>
+    
+    </div>
        <div class="card">
         <div class="card-header">
             <h1>
@@ -37,6 +41,7 @@
         </div>
        </div>
     </div>
+    
 </section>
 
 

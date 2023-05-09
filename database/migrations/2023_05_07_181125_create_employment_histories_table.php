@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->dateTime("timeFrom")->nullable;
-            $table->dateTime("timeTill")->nullable;
+            $table->date("timeFrom")->nullable;
+            $table->date("timeTill")->nullable;
         });
     }
 

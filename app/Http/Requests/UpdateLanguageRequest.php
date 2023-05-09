@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Astrotomic\Translatable\Validation\RuleFactory;
 
 class UpdateLanguageRequest extends FormRequest
 {
@@ -21,8 +22,12 @@ class UpdateLanguageRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
-        ];
+        $rules = RuleFactory::make([
+            '%title%' => 'required|string',
+            '%text%' => 'required|string',
+            
+        ]);
+
+        return $rules;
     }
 }

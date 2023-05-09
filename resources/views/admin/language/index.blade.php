@@ -4,6 +4,10 @@
 
 <section>
     <div class="container">
+    <div class="mb-3 text-end">
+    <a class="btn btn-primary" href="{{ route('language.create') }}" role="button">{{ __('Language create') }}</a>
+    
+    </div>
        <div class="card">
         <div class="card-header">
             <h1>
@@ -38,6 +42,7 @@
         </div>
        </div>
     </div>
+    
 </section>
 
 

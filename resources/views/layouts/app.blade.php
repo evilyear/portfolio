@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,58 +21,47 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        @if(Auth::check())
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('education.create') }}">{{ __('Education') }}</a>
+                            <a class="nav-link" href="{{ route('education.index') }}">{{ __('Education') }}</a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('education.index') }}">{{ __('Education list') }}</a>
+                            <a class="nav-link" href="{{ route('employment_history.index') }}">{{ __('Employment history') }}</a>
                         </li>
+                       
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('employment_history.create') }}">{{ __('Employment History') }}</a>
+                            <a class="nav-link" href="{{ route('skill.index') }}">{{ __('Skills') }}</a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('employment_history.index') }}">{{ __('Employments list') }}</a>
+                            <a class="nav-link" href="{{ route('skill_element.index') }}">{{ __('Skill elements') }}</a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('skill.create') }}">{{ __('Skills') }}</a>
+                            <a class="nav-link" href="{{ route('language.index') }}">{{ __('Language') }}</a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('skill.index') }}">{{ __('Skills list') }}</a>
+                            <a class="nav-link" href="{{ route('main_data.index') }}">{{ __('Main data') }}</a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('skill_element.create') }}">{{ __('Skill element') }}</a>
+                            <a class="nav-link" href="{{ route('reference.index') }}">{{ __('References') }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('skill_element.index') }}">{{ __('Skill elements list') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('language.create') }}">{{ __('Language') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('language.index') }}">{{ __('Language list') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('main_data.create') }}">{{ __('Main Data') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('main_data.index') }}">{{ __('Main data list') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('reference.create') }}">{{ __('References') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('reference.index') }}">{{ __('References list') }}</a>
-                        </li>
+                        @endif
                     </ul>
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -81,12 +70,6 @@
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -101,6 +84,12 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+
+                                    @if (Route::has('register'))
+                                    
+                                        <a class="dropdown-item" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    
+                                    @endif
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf

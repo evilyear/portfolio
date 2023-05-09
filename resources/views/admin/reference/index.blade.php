@@ -4,6 +4,10 @@
 
 <section>
     <div class="container">
+    <div class="mb-3 text-end">
+    <a class="btn btn-primary" href="{{ route('reference.create') }}" role="button">{{ __('Reference create') }}</a>
+    
+    </div>
        <div class="card">
         <div class="card-header">
             <h1>
@@ -39,6 +43,7 @@
         </div>
        </div>
     </div>
+    
 </section>
 
 

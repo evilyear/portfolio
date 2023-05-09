@@ -4,6 +4,15 @@
 
 <section>
     <div class="container">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
        <div class="card">
         <div class="card-header">
             <h1>
@@ -34,8 +43,12 @@
                     <div class="tab-pane fade @if($localItem == config('translatable.fallback_locale')) active show @endif" id="{{$localItem}}" role="tabpanel">
                     <div class="mb-3">
                             <label for="title-{{ $localItem }}" class="form-label">{{__("Title")}}</label>
-                            <input type="text" class="form-control" id="title-{{ $localItem }}" name="{{ $localItem }}[title]" placeholder="Title" 
-                            value="{{$skill->translate($localItem)->title}}">
+                            <input type="text" 
+                            class="form-control @error($localItem.'.title') is-invalid @enderror" 
+                            id="title-{{ $localItem }}" 
+                            name="{{ $localItem }}[title]" 
+                            placeholder="Title" 
+                            value="{{old($localItem.'.title', $skill->translate($localItem)->title)}}">
                         </div>
                     </div>
                 @endforeach

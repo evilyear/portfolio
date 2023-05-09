@@ -4,12 +4,18 @@
 
 <section>
     <div class="container">
+    <div class="mb-3 text-end">
+    <a class="btn btn-primary" href="{{ route('education.create') }}" role="button">{{ __('Education create') }}</a>
+    </div>
        <div class="card">
         <div class="card-header">
             <h1>
                 {{__("Educations list")}}
             </h1>
         </div>
+           
+    
+        
         <div class="card-body">
             <table class="table">
                 <thead>
@@ -39,8 +45,10 @@
                 </tbody>
             </table>
         </div>
+        
        </div>
     </div>
+    
 </section>
 
 

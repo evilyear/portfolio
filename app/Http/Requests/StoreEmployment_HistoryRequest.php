@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Astrotomic\Translatable\Validation\RuleFactory;
 
 class StoreEmployment_HistoryRequest extends FormRequest
 {
@@ -21,8 +22,13 @@ class StoreEmployment_HistoryRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
-        ];
+        $rules = RuleFactory::make([
+            '%title%' => 'required|string',
+            '%text%' => 'required|string',
+            'timeFrom' => 'required',
+            'timeTill' => 'required',
+        ]);
+
+        return $rules;
     }
 }

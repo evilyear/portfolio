@@ -4,6 +4,15 @@
 
 <section>
     <div class="container">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
        <div class="card">
         <div class="card-header">
             <h1>
@@ -15,7 +24,12 @@
             @csrf
             <div class="mb-3">
                 <label for="text" class="form-label">{{__("Key")}}</label>
-                <input class="form-control" type="text" id="key" name="key" rows="3">
+                <input class="form-control @error('key') is-invalid @enderror" 
+                type="text" 
+                id="key" 
+                name="key" 
+                value="{{old('key', $main_data->key)}}"
+                >
             </div>
             <ul class="nav nav-tabs " role="tablist">
                 @foreach( config('translatable.locales') as  $localItem)
@@ -38,7 +52,10 @@
                     <div class="tab-pane fade @if($localItem == config('translatable.fallback_locale')) active show @endif" id="{{$localItem}}" role="tabpanel">
                         <div class="mb-3">
                             <label for="text-{{ $localItem }}" class="form-label">{{__("Text")}}</label>
-                            <textarea class="form-control" id="text-{{ $localItem }}" name="{{ $localItem }}[text]" rows="3">{{$main_data->translate($localItem)->text}}</textarea>
+                            <textarea class="form-control @error($localItem.'.text') is-invalid @enderror" 
+                            id="text-{{ $localItem }}" 
+                            name="{{ $localItem }}[text]" 
+                            rows="3">{{old($localItem.'.text', $main_data->translate($localItem)->text)}}</textarea>
                         </div>
                     </div>
                 @endforeach

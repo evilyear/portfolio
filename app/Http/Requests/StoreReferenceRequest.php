@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Astrotomic\Translatable\Validation\RuleFactory;
 
 class StoreReferenceRequest extends FormRequest
 {
@@ -21,8 +22,13 @@ class StoreReferenceRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
-        ];
+        $rules = RuleFactory::make([
+            '%title%' => 'required|string',
+            '%text%' => 'required|string',
+            'link' => 'required|string',
+            'image' => 'required',
+        ]);
+
+        return $rules;
     }
 }

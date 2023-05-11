@@ -8,6 +8,7 @@ use App\Http\Controllers\SkillElementController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\MainDataController;
 use App\Http\Controllers\ReferenceController;
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+$url_prefix="";
+
+if(in_array(Request::segment(1), config('translatable.locales'))){
+    $url_prefix='/'.Request::segment(1);
+    app()->setLocale(Request::segment(1));
+}
+else{
+    app()->setLocale(config('translatable.fallback_locale'));
+}
+
+Route::prefix($url_prefix)->group( function(){
+
+   // Route::get('/', [SiteController::class, 'index'])->name('site.index');
+
+});
+
+
 
 
 

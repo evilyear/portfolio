@@ -19,4 +19,17 @@ class MainData extends Model implements TranslatableContract
     protected $fillable = [
         "key"
     ];
+
+    public static function getTitleByKey($key, $currentLocale)
+    {
+        $main_data = self::where('key', $key)->first();
+        
+        if ($main_data) {
+            $fallbackLocale = config('translatable.fallback_locale');
+            
+            return $main_data->translateOrNew($currentLocale)->text ?? $main_data->translateOrNew($fallbackLocale)->text;
+        }
+        
+        return null;
+    }
 }

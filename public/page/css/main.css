@@ -2038,7 +2038,7 @@ body.light-skin .header.sticky .navbar.default:before {
 	margin-top: 0;
 	margin-bottom: 40px;
 	font-family: "Sorts Mill Goudy";
-	font-size: 138px;
+	font-size: 6rem;
 	line-height: 1;
 	color: #FFF;
 	font-weight: 400;
@@ -2089,10 +2089,11 @@ body.light-skin .header.sticky .navbar.default:before {
 }
 
 .p-title {
-	margin-top: 80px;
+	/*margin-top: 80px;*/
 	margin-bottom: 40px;
 	font-size: 40px;
 	font-weight: 700;
+	text-transform: capitalize;
 }
 
 
@@ -2105,7 +2106,7 @@ body.light-skin .header.sticky .navbar.default:before {
 }
 
 .hero-started {
-	padding-top: 280px;
+	padding-top: 80px;
 	position: relative;
 }
 
@@ -2513,7 +2514,7 @@ body.light-skin .header.sticky .navbar.default:before {
 	background: #ff8059;
 }
 
-.history-left {
+/*.history-left {
 	margin-bottom: 40px;
 	float: left;
 	width: 270px;
@@ -2522,10 +2523,10 @@ body.light-skin .header.sticky .navbar.default:before {
 .history-right {
 	float: right;
 	width: 270px;
-}
+}*/
 
 .history-item {
-	margin-top: 40px;
+	margin-top: 0px;
 }
 
 .history-item:first-child {
@@ -2544,7 +2545,7 @@ body.light-skin .header.sticky .navbar.default:before {
 }
 
 .history-item .text {
-	margin: 16px 0 0 0;
+	margin: 0px 0 0 0;
 	font-size: 18px;
 	color: #bdc1c7;
 }
@@ -5582,7 +5583,7 @@ body.light-skin button:focus {
 body.light-skin .header .logo img,
 body.light-skin .preloader .spinner-logo img,
 body.light-skin .profile-box .signature img {
-	filter: brightness(1) invert(1);
+	/*filter: brightness(1) invert(1);*/
 }
 
 @media only screen and (max-width: 767px) {

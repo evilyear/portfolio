@@ -22,8 +22,6 @@ class StoreEducationRequest extends FormRequest
         $rules = RuleFactory::make([
             '%title%' => 'required|string',
             '%text%' => 'required|string',
-            'timeFrom' => 'required',
-            'timeTill' => 'required',
         ]);
 
         return $rules;

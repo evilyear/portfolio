@@ -2,7 +2,7 @@
     <div class="container">
         <div class="hero-started">
             <div class="slide scrolla-element-anim-1 scroll-animate" data-animate="active">
-                <img src="{{ asset('page/images/profile.png') }}" alt="" />
+                <img src="{{ asset('page/images/CV_image.jpg') }}" alt="" />
                 <span class="circle circle-1">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="749px" height="375px"><path fill-rule="evenodd" fill="#ff8059" d="M749.000,0.000 C749.000,206.786 581.459,374.514 374.608,374.514 C167.758,374.514 -0.000,206.786 -0.000,0.000 "/></svg>
                 </span>

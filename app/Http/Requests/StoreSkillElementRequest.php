@@ -25,7 +25,7 @@ class StoreSkillElementRequest extends FormRequest
     {
         $rules = RuleFactory::make([
             '%title%' => 'required|string',
-            '%text%' => 'required|string',
+            
             
         ]);
 

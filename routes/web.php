@@ -23,7 +23,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    //ellenorizni
+    return view('front.main.index');
 });
 
 $url_prefix="";
@@ -38,7 +40,7 @@ else{
 
 Route::prefix($url_prefix)->group( function(){
 
-   // Route::get('/', [SiteController::class, 'index'])->name('site.index');
+   Route::get('/', [SiteController::class, 'index'])->name('site.index');
 
 });
 
@@ -111,4 +113,4 @@ require __DIR__.'/auth.php';
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

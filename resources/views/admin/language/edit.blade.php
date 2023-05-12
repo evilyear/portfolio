@@ -55,8 +55,7 @@
                             <textarea class="form-control @error($localItem.'.text') is-invalid @enderror" 
                                     id="text-{{ $localItem }}" 
                                     name="{{ $localItem }}[text]" 
-                                    rows="3">{{old($localItem.'.text', $language->translate($localItem)->text)}}
-                            </textarea>
+                                    rows="3">{{old($localItem.'.text', $language->translate($localItem)->text)}}</textarea>
                         </div>
                     </div>
                 @endforeach

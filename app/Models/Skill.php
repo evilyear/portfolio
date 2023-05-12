@@ -15,7 +15,7 @@ class Skill extends Model implements TranslatableContract
     public $translatedAttributes = ["title"];
 
     public function skill_elements(){
-        return $this->belongsToMany(SkillElement::class);
+        return $this->hasMany(SkillElement::class);
     }
     
 }

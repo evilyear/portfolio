@@ -20,6 +20,7 @@
                     {{$current_datas['about_me']}}
                   </p>
                  
+                  <a target="_blank" href="https://github.com/evilyear/portfolio" class="btn scrolla-element-anim-1 scroll-animate" data-animate="active"><strong>{{__('Git repository of THIS PAGE')}}</strong></a>
                   <a href="mailto:{{$current_datas['email']}}" class="btn scrolla-element-anim-1 scroll-animate" data-animate="active">{{__('Contact Me')}}</a>
                   <a target="_blank" href="{{ asset('page/pdf/'.$current_datas['cv_pdf'].'.pdf') }}" class="btn scrolla-element-anim-1 scroll-animate" data-animate="active">{{__('Download CV')}}</a>
                 </div>

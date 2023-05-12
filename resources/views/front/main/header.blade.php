@@ -3,7 +3,7 @@
       <div class="centrize full-width">
         <div class="vertical-center">
           <div class="spinner-logo">
-            <img src="{{ asset('page/images/ober_logo.png') }}" alt="" />
+            <img src="{{ asset('page/images/logo.png') }}" alt="" />
             <div class="spinner-dot"></div>
             <div class="spinner spinner-line"></div>
           </div>
@@ -20,7 +20,7 @@
             <!-- logo -->
             <div class="logo">
               <a href="index.html">
-                <img src="{{ asset('page/images/ober_logo.png') }}" alt="" />
+                <img src="{{ asset('page/images/logo.png') }}" alt="" />
               </a>
             </div>
 
@@ -41,72 +41,16 @@
               </span>
             </a>
 
-            <!-- menu btn -->
-            <a href="#" class="menu-btn"><span></span></a>
+            <a href="/en" class="flag-img"><img src="{{ asset('page/images/en.jpg') }}" alt="English" title="English" class="img-fluid"/></a>
+            <a href="/sk" class="flag-img"><img src="{{ asset('page/images/sk.jpg') }}" alt="Slovak" title="Slovak" class="img-fluid"/></a>
+            <a href="/hu" class="flag-img"><img src="{{ asset('page/images/hu.jpg') }}" alt="Magyar" title="Magyar" class="img-fluid"/></a>
+
+           
 
           </div>
         </div>
       </div>
 
-      <!-- Menu Full Overlay -->
-      <div class="menu-full-overlay">
-        <div class="menu-full-container">
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 offset-1">
-
-                <!-- menu full -->
-                <div class="menu-full">
-                  <ul class="menu-full">
-                    <li class="menu-item">
-                      <a class="splitting-text-anim-2" data-splitting="chars" href="#about-section">About</a>
-                    </li>
-                    <li class="menu-item">
-                      <a class="splitting-text-anim-2" data-splitting="chars" href="#resume-section">Resume</a>
-                    </li>
-                    <li class="menu-item">
-                      <a class="splitting-text-anim-2" data-splitting="chars" href="#works-section">Works</a>
-                    </li>
-                    <li class="menu-item">
-                      <a class="splitting-text-anim-2" data-splitting="chars" href="#pricing-section">Pricing</a>
-                    </li>
-                    <li class="menu-item">
-                      <a class="splitting-text-anim-2" data-splitting="chars" href="#blog-section">Blog</a>
-                    </li>
-                    <li class="menu-item">
-                      <a class="splitting-text-anim-2" data-splitting="chars" href="#contact-section">Contact</a>
-                    </li>
-                    <li class="menu-item menu-item-has-children has-children">
-                      <a class="splitting-text-anim-2" data-splitting="chars">Pages</a>
-                      <ul class="sub-menu">
-                        <li class="menu-item"><a class="splitting-text-anim-1" data-splitting="chars" href="works.html">Works (grid)</a></li>
-                        <li class="menu-item"><a class="splitting-text-anim-1" data-splitting="chars" href="works-list.html">Works (list)</a></li>
-                        <li class="menu-item"><a class="splitting-text-anim-1" data-splitting="chars" href="work-single.html">Work Single Page</a></li>
-                        <li class="menu-item"><a class="splitting-text-anim-1" data-splitting="chars" href="blog.html">Blog Posts</a></li>
-                        <li class="menu-item"><a class="splitting-text-anim-1" data-splitting="chars" href="blog-single.html">Blog Single Post</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- social -->
-        <div class="menu-social-links">
-          <a href="http://dribbble.com" target="blank" class="scrolla-element-anim-1" title="dribbble">
-            <i class="fab fa-dribbble"></i>
-          </a>
-          <a href="http://twitter.com" target="blank" class="scrolla-element-anim-1" title="twitter">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="http://behance.com" target="blank" class="scrolla-element-anim-1" title="behance">
-            <i class="fab fa-behance"></i>
-          </a>
-        </div>
-
-      </div>
+    
 
     </header>

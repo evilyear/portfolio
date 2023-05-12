@@ -81,7 +81,9 @@
               <div class="name">{{$education->title}}</div>
               <div class="text">{{$education->text}}</div>  
             
+              @if(false)
               <div class="date">{{$year = date('Y', strtotime($education->timeFrom))}} - {{$year = date('Y', strtotime($education->timeTill))}}</div>
+              @endif
             </div>
           @endforeach  
         </div>
